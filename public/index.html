@@ -176,9 +176,8 @@
 
     /* ===== HERO IMAGE SLIDER ===== */
     .hero-img-slider {
-      position: absolute; right: 0; top: 0; bottom: 0; width: 55%;
-      clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%);
-      overflow: hidden;
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      overflow: hidden; z-index: 1;
     }
     .hero-img-slider .slide {
       position: absolute; inset: 0;
@@ -187,7 +186,7 @@
     .hero-img-slider .slide.active { opacity: 1; }
     .hero-img-slider .slide img {
       width: 100%; height: 100%; object-fit: cover; object-position: center;
-      filter: brightness(0.75);
+      filter: brightness(0.45);
     }
     .hero-img-slider .hero-slider-dots {
       position: absolute; bottom: 20px; right: 20px;
@@ -246,7 +245,7 @@
 
     @media (max-width: 767px) {
       .hero-img-slider {
-        display: none;
+        display: block;
       }
       .hero-content { padding: 100px 0 60px; }
       .hero-h1 { font-size: 2rem; }
@@ -265,41 +264,21 @@
       overflow: hidden;
     }
     .hero-bg-overlay {
-      position: absolute; inset: 0;
+      position: absolute; inset: 0; z-index: 2;
       background:
-        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(93,64,55,0.35) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 80% at 10% 80%, rgba(200,155,60,0.08) 0%, transparent 60%);
+        radial-gradient(ellipse 80% 60% at 30% 50%, rgba(10,5,2,0.5) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 80% at 10% 80%, rgba(200,155,60,0.06) 0%, transparent 60%);
     }
     .hero-grid-pattern {
-      position: absolute; inset: 0; opacity: 0.04;
+      position: absolute; inset: 0; opacity: 0.02; z-index: 2;
       background-image:
         linear-gradient(var(--accent) 1px, transparent 1px),
         linear-gradient(90deg, var(--accent) 1px, transparent 1px);
       background-size: 60px 60px;
     }
-    .hero-wood-texture {
-      position: absolute; right: 0; top: 0; bottom: 0; width: 55%;
-      background: linear-gradient(135deg, #3E2417 0%, #5D4037 30%, #8B5E3C 60%, #6D4C41 100%);
-      clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
-      opacity: 0.5;
-    }
-    .hero-wood-lines {
-      position: absolute; right: 0; top: 0; bottom: 0; width: 55%;
-      clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
-      overflow: hidden;
-    }
-    .hero-wood-lines::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: repeating-linear-gradient(
-        168deg,
-        transparent 0px,
-        transparent 18px,
-        rgba(200,155,60,0.06) 18px,
-        rgba(200,155,60,0.06) 19px
-      );
-    }
-    .hero-content { position: relative; z-index: 2; padding: 120px 0 80px; }
+    .hero-wood-texture { display: none; }
+    .hero-wood-lines { display: none; }
+    .hero-content { position: relative; z-index: 3; padding: 120px 0 80px; }
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 10px;
       background: rgba(200,155,60,0.12);
@@ -1126,7 +1105,7 @@
         <div class="product-card">
           <div class="product-img">
             <div class="product-img-visual african" style="padding:0;overflow:hidden;">
-              <img src="https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&w=600&q=80" alt="african" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=80" alt="african" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
               <div class="product-overlay"></div>
             </div>
             <span class="product-tag">Imported</span>
@@ -1149,7 +1128,7 @@
         <div class="product-card">
           <div class="product-img">
             <div class="product-img-visual teak" style="padding:0;overflow:hidden;">
-              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="teak" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=80" alt="teak" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
               <div class="product-overlay"></div>
             </div>
             <span class="product-tag">Premium</span>
@@ -1172,7 +1151,7 @@
         <div class="product-card">
           <div class="product-img">
             <div class="product-img-visual burma" style="padding:0;overflow:hidden;">
-              <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=600&q=80" alt="burma" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1572635148818-ef6fd45eb394?auto=format&fit=crop&w=600&q=80" alt="burma" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
               <div class="product-overlay"></div>
             </div>
             <span class="product-tag">Exclusive</span>
@@ -1195,7 +1174,7 @@
         <div class="product-card">
           <div class="product-img">
             <div class="product-img-visual neem" style="padding:0;overflow:hidden;">
-              <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=600&q=80" alt="neem" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="neem" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
               <div class="product-overlay"></div>
             </div>
           </div>
@@ -1217,7 +1196,7 @@
         <div class="product-card">
           <div class="product-img">
             <div class="product-img-visual doors" style="padding:0;overflow:hidden;">
-              <img src="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?auto=format&fit=crop&w=600&q=80" alt="doors" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="doors" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
               <div class="product-overlay"></div>
             </div>
             <span class="product-tag">Bestseller</span>
@@ -1240,7 +1219,7 @@
         <div class="product-card">
           <div class="product-img">
             <div class="product-img-visual wpc" style="padding:0;overflow:hidden;">
-              <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=600&q=80" alt="wpc" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80" alt="wpc" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
               <div class="product-overlay"></div>
             </div>
             <span class="product-tag">Modern</span>
@@ -1263,7 +1242,7 @@
         <div class="product-card">
           <div class="product-img">
             <div class="product-img-visual windows" style="padding:0;overflow:hidden;">
-              <img src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=600&q=80" alt="windows" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?auto=format&fit=crop&w=600&q=80" alt="windows" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
               <div class="product-overlay"></div>
             </div>
           </div>
@@ -1285,7 +1264,7 @@
         <div class="product-card">
           <div class="product-img">
             <div class="product-img-visual frames" style="padding:0;overflow:hidden;">
-              <img src="https://images.unsplash.com/photo-1593696140826-c58b021acf8b?auto=format&fit=crop&w=600&q=80" alt="frames" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80" alt="frames" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
               <div class="product-overlay"></div>
             </div>
           </div>
@@ -1307,7 +1286,7 @@
         <div class="product-card">
           <div class="product-img">
             <div class="product-img-visual interior" style="padding:0;overflow:hidden;">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="interior" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?auto=format&fit=crop&w=600&q=80" alt="interior" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
               <div class="product-overlay"></div>
             </div>
           </div>
@@ -2050,58 +2029,58 @@
     window.open(wa, '_blank');
   }
 
-  // ===== IMAGE SLIDERS (loaded from backend API) =====
-  async function loadAndInitSliders() {
-    try {
-      const res = await fetch('/api/images');
-      const json = await res.json();
-      if (!json.success) throw new Error('API error');
+  // ===== IMAGE SLIDERS (Direct Unsplash — no server needed) =====
+  function loadAndInitSliders() {
+    // Hero images — timber, wood, luxury interiors
+    const heroImages = [
+      { src: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1600&q=85', alt: 'Premium Teak Wood' },
+      { src: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1600&q=85', alt: 'Luxury Interior Doors' },
+      { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85', alt: 'Premium Home Interior' },
+      { src: 'https://images.unsplash.com/photo-1449247709967-d4461a6a6103?auto=format&fit=crop&w=1600&q=85', alt: 'Wooden Door Craftsmanship' },
+      { src: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1600&q=85', alt: 'Interior Wood Design' },
+      { src: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=85', alt: 'Wooden Furniture' },
+      { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1600&q=85', alt: 'Wood Texture' },
+    ];
 
-      const { heroImages, aboutImages } = json.data;
+    // About images
+    const aboutImages = [
+      { src: 'https://images.unsplash.com/photo-1572635148818-ef6fd45eb394?auto=format&fit=crop&w=800&q=85', alt: 'Timber Depot' },
+      { src: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=800&q=85', alt: 'Premium Wood Stock' },
+      { src: 'https://images.unsplash.com/photo-1503174971373-b1f69850bded?auto=format&fit=crop&w=800&q=85', alt: 'Hardwood Collection' },
+    ];
 
-      // Build Hero Slider
-      const heroSlider = document.getElementById('heroSlider');
-      const heroDotsContainer = document.getElementById('heroSliderDots');
-      heroImages.forEach((img, i) => {
-        const slide = document.createElement('div');
-        slide.className = 'slide' + (i === 0 ? ' active' : '');
-        const image = document.createElement('img');
-        image.src = img.src;
-        image.alt = img.alt;
-        image.loading = i === 0 ? 'eager' : 'lazy';
-        slide.appendChild(image);
-        heroSlider.insertBefore(slide, heroDotsContainer);
-      });
+    // Build Hero Slider
+    const heroSlider = document.getElementById('heroSlider');
+    const heroDotsContainer = document.getElementById('heroSliderDots');
+    heroImages.forEach((img, i) => {
+      const slide = document.createElement('div');
+      slide.className = 'slide' + (i === 0 ? ' active' : '');
+      const image = document.createElement('img');
+      image.src = img.src;
+      image.alt = img.alt;
+      image.loading = i === 0 ? 'eager' : 'lazy';
+      slide.appendChild(image);
+      heroSlider.insertBefore(slide, heroDotsContainer);
+    });
 
-      // Build About Slider
-      const aboutSlider = document.getElementById('aboutSlider');
-      const aboutDotsContainer = document.getElementById('aboutSliderDots');
-      const aboutAccent = aboutSlider.querySelector('.about-img-accent-overlay');
-      aboutImages.forEach((img, i) => {
-        const slide = document.createElement('div');
-        slide.className = 'slide' + (i === 0 ? ' active' : '');
-        const image = document.createElement('img');
-        image.src = img.src;
-        image.alt = img.alt;
-        image.loading = 'lazy';
-        slide.appendChild(image);
-        aboutSlider.insertBefore(slide, aboutAccent);
-      });
+    // Build About Slider
+    const aboutSlider = document.getElementById('aboutSlider');
+    const aboutDotsContainer = document.getElementById('aboutSliderDots');
+    const aboutAccent = aboutSlider.querySelector('.about-img-accent-overlay');
+    aboutImages.forEach((img, i) => {
+      const slide = document.createElement('div');
+      slide.className = 'slide' + (i === 0 ? ' active' : '');
+      const image = document.createElement('img');
+      image.src = img.src;
+      image.alt = img.alt;
+      image.loading = 'lazy';
+      slide.appendChild(image);
+      aboutSlider.insertBefore(slide, aboutAccent);
+    });
 
-      // Init both sliders
-      startSlider('heroSlider', 'heroSliderDots', 3500);
-      startSlider('aboutSlider', 'aboutSliderDots', 4500);
-
-    } catch (err) {
-      console.warn('API not available, using fallback images:', err);
-      // Fallback — direct image paths if no server
-      const fallbackHero = ['/images/slide1.png','/images/slide2.png','/images/slide3.png','/images/slide4.png','/images/slide5.png','/images/slide6.png','/images/slide7.png'];
-      const fallbackAbout = ['/images/about1.png','/images/about2.png','/images/about3.png'];
-      buildSlider('heroSlider', 'heroSliderDots', fallbackHero);
-      buildSlider('aboutSlider', 'aboutSliderDots', fallbackAbout, true);
-      startSlider('heroSlider', 'heroSliderDots', 3500);
-      startSlider('aboutSlider', 'aboutSliderDots', 4500);
-    }
+    // Init both sliders
+    startSlider('heroSlider', 'heroSliderDots', 3500);
+    startSlider('aboutSlider', 'aboutSliderDots', 4500);
   }
 
   function buildSlider(wrapperId, dotsId, images, isAbout = false) {

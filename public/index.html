@@ -111,9 +111,8 @@
       50% { transform: translateX(-50%) translateY(-4px); }
     }
     .desktop-nav .nav-brand {
-      font-family: 'Playfair Display', serif;
-      color: var(--white); font-size: 1rem; font-weight: 700;
-      margin-right: 20px; letter-spacing: 0.05em;
+      margin-right: 16px; text-decoration: none;
+      display: flex; align-items: center;
     }
     .desktop-nav .nav-brand span { color: var(--accent); }
     .desktop-nav a.nav-item-link {
@@ -177,8 +176,8 @@
 
     /* ===== HERO IMAGE SLIDER ===== */
     .hero-img-slider {
-      position: absolute; right: 0; top: 0; bottom: 0; width: 52%;
-      clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%);
+      position: absolute; right: 0; top: 0; bottom: 0; width: 55%;
+      clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%);
       overflow: hidden;
     }
     .hero-img-slider .slide {
@@ -187,8 +186,8 @@
     }
     .hero-img-slider .slide.active { opacity: 1; }
     .hero-img-slider .slide img {
-      width: 100%; height: 100%; object-fit: cover;
-      filter: brightness(0.7);
+      width: 100%; height: 100%; object-fit: cover; object-position: center;
+      filter: brightness(0.75);
     }
     .hero-img-slider .hero-slider-dots {
       position: absolute; bottom: 20px; right: 20px;
@@ -536,8 +535,14 @@
       width: 100%; height: 100%;
       display: flex; align-items: center; justify-content: center;
       transition: transform 0.5s;
-      position: relative;
+      position: relative; overflow: hidden;
     }
+    .product-img-visual img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .product-card:hover .product-img-visual img { transform: scale(1.07); }
     .product-card:hover .product-img-visual { transform: scale(1.06); }
     .product-img-visual.doors { background: linear-gradient(135deg, #3E2723 0%, #5D4037 50%, #8D6E63 100%); }
     .product-img-visual.windows { background: linear-gradient(135deg, #2E7D32 0%, #4E342E 50%, #6D4C41 100%); }
@@ -935,7 +940,7 @@
 
 <!-- DESKTOP FLOATING NAV -->
 <nav class="desktop-nav" id="desktopNav" aria-label="Main navigation">
-  <div class="nav-brand">M<span>.</span>TIMBER</div>
+  <a href="#hero" class="nav-brand" style="display:flex;align-items:center;padding:0;"><img src="/images/logo.png" alt="Meem Timber Depot" style="height:36px;width:auto;object-fit:contain;filter:brightness(1.1);"/></a>
   <a href="#hero" class="nav-item-link active">Home</a>
   <a href="#about" class="nav-item-link">About</a>
   <a href="#products" class="nav-item-link">Products</a>
@@ -978,6 +983,9 @@
 
   <div class="container">
     <div class="hero-content">
+      <div class="hero-logo-wrap" data-aos="fade-down" style="margin-bottom:24px;">
+        <img src="/images/logo.png" alt="Meem Timber Depot" style="height:70px;width:auto;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.5));"/>
+      </div>
       <div class="hero-eyebrow" data-aos="fade-right">Premium Timber Solutions Since 2010</div>
       <h1 class="hero-h1" data-aos="fade-up" data-aos-delay="100">
         Premium Wood.<br/>
@@ -1117,8 +1125,8 @@
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
         <div class="product-card">
           <div class="product-img">
-            <div class="product-img-visual african">
-              <i class="fa-solid fa-tree product-icon-large"></i>
+            <div class="product-img-visual african" style="padding:0;overflow:hidden;">
+              <img src="https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&w=600&q=80" alt="african" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
               <div class="product-overlay"></div>
             </div>
             <span class="product-tag">Imported</span>
@@ -1140,8 +1148,8 @@
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
         <div class="product-card">
           <div class="product-img">
-            <div class="product-img-visual teak">
-              <i class="fa-solid fa-spa product-icon-large"></i>
+            <div class="product-img-visual teak" style="padding:0;overflow:hidden;">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="teak" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
               <div class="product-overlay"></div>
             </div>
             <span class="product-tag">Premium</span>
@@ -1163,8 +1171,8 @@
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
         <div class="product-card">
           <div class="product-img">
-            <div class="product-img-visual burma">
-              <i class="fa-solid fa-fire-flame-curved product-icon-large"></i>
+            <div class="product-img-visual burma" style="padding:0;overflow:hidden;">
+              <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=600&q=80" alt="burma" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
               <div class="product-overlay"></div>
             </div>
             <span class="product-tag">Exclusive</span>
@@ -1186,8 +1194,8 @@
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
         <div class="product-card">
           <div class="product-img">
-            <div class="product-img-visual neem">
-              <i class="fa-solid fa-leaf product-icon-large"></i>
+            <div class="product-img-visual neem" style="padding:0;overflow:hidden;">
+              <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=600&q=80" alt="neem" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
               <div class="product-overlay"></div>
             </div>
           </div>
@@ -1208,8 +1216,8 @@
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
         <div class="product-card">
           <div class="product-img">
-            <div class="product-img-visual doors">
-              <i class="fa-solid fa-door-closed product-icon-large"></i>
+            <div class="product-img-visual doors" style="padding:0;overflow:hidden;">
+              <img src="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?auto=format&fit=crop&w=600&q=80" alt="doors" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
               <div class="product-overlay"></div>
             </div>
             <span class="product-tag">Bestseller</span>
@@ -1231,8 +1239,8 @@
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
         <div class="product-card">
           <div class="product-img">
-            <div class="product-img-visual wpc">
-              <i class="fa-solid fa-shield-halved product-icon-large"></i>
+            <div class="product-img-visual wpc" style="padding:0;overflow:hidden;">
+              <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=600&q=80" alt="wpc" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
               <div class="product-overlay"></div>
             </div>
             <span class="product-tag">Modern</span>
@@ -1254,8 +1262,8 @@
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
         <div class="product-card">
           <div class="product-img">
-            <div class="product-img-visual windows">
-              <i class="fa-regular fa-window-maximize product-icon-large"></i>
+            <div class="product-img-visual windows" style="padding:0;overflow:hidden;">
+              <img src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=600&q=80" alt="windows" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
               <div class="product-overlay"></div>
             </div>
           </div>
@@ -1276,8 +1284,8 @@
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
         <div class="product-card">
           <div class="product-img">
-            <div class="product-img-visual frames">
-              <i class="fa-solid fa-border-all product-icon-large"></i>
+            <div class="product-img-visual frames" style="padding:0;overflow:hidden;">
+              <img src="https://images.unsplash.com/photo-1593696140826-c58b021acf8b?auto=format&fit=crop&w=600&q=80" alt="frames" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
               <div class="product-overlay"></div>
             </div>
           </div>
@@ -1298,8 +1306,8 @@
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
         <div class="product-card">
           <div class="product-img">
-            <div class="product-img-visual interior">
-              <i class="fa-solid fa-door-open product-icon-large"></i>
+            <div class="product-img-visual interior" style="padding:0;overflow:hidden;">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="interior" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
               <div class="product-overlay"></div>
             </div>
           </div>
@@ -1411,67 +1419,104 @@
     </div>
     <div class="masonry-grid" data-aos="fade-up">
 
-      <div class="masonry-item" onclick="openLightbox('Premium Teak Door Installation')">
-        <div class="masonry-visual masonry-box" style="height:280px;background:linear-gradient(135deg,#3E2723,#6D4C41);">
-          <i class="fa-solid fa-door-closed"></i>
-        </div>
-        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Teak Door Installation</div></div>
+      <div class="masonry-item" onclick="openLightbox('Premium Teak Door')">
+        <img class="masonry-visual" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=75" alt="Premium Teak Door" style="height:280px;width:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Premium Teak Door</div></div>
       </div>
 
-      <div class="masonry-item" onclick="openLightbox('African Hardwood Flooring')">
-        <div class="masonry-visual masonry-box" style="height:180px;background:linear-gradient(135deg,#1B5E20,#4E342E);">
-          <i class="fa-solid fa-layer-group"></i>
-        </div>
-        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> African Hardwood Flooring</div></div>
+      <div class="masonry-item" onclick="openLightbox('African Wood Planks')">
+        <img class="masonry-visual" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=75" alt="African Wood Planks" style="height:180px;width:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> African Wood Planks</div></div>
       </div>
 
-      <div class="masonry-item" onclick="openLightbox('WPC Door Set')">
-        <div class="masonry-visual masonry-box" style="height:320px;background:linear-gradient(135deg,#263238,#5D4037);">
-          <i class="fa-solid fa-shield-halved"></i>
-        </div>
-        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> WPC Door Set</div></div>
+      <div class="masonry-item" onclick="openLightbox('WPC Door Installation')">
+        <img class="masonry-visual" src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=600&q=75" alt="WPC Door Installation" style="height:320px;width:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> WPC Door Installation</div></div>
       </div>
 
       <div class="masonry-item" onclick="openLightbox('Wooden Window Frames')">
-        <div class="masonry-visual masonry-box" style="height:200px;background:linear-gradient(135deg,#2E7D32,#4E342E);">
-          <i class="fa-regular fa-window-maximize"></i>
-        </div>
+        <img class="masonry-visual" src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=75" alt="Wooden Window Frames" style="height:200px;width:100%;object-fit:cover;display:block;" loading="lazy"/>
         <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Wooden Window Frames</div></div>
       </div>
 
-      <div class="masonry-item" onclick="openLightbox('Timber Depot Stock')">
-        <div class="masonry-visual masonry-box" style="height:260px;background:linear-gradient(135deg,#4E342E,#795548);">
-          <i class="fa-solid fa-warehouse"></i>
-        </div>
-        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Our Timber Depot</div></div>
+      <div class="masonry-item" onclick="openLightbox('Luxury Interior Doors')">
+        <img class="masonry-visual" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=75" alt="Luxury Interior Doors" style="height:260px;width:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Luxury Interior Doors</div></div>
       </div>
 
-      <div class="masonry-item" onclick="openLightbox('Burma Teak Planks')">
-        <div class="masonry-visual masonry-box" style="height:150px;background:linear-gradient(135deg,#E65100,#3E2723);">
-          <i class="fa-solid fa-tree"></i>
-        </div>
-        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Burma Teak Planks</div></div>
+      <div class="masonry-item" onclick="openLightbox('Teak Wood Planks')">
+        <img class="masonry-visual" src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=75" alt="Teak Wood Planks" style="height:160px;width:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Teak Wood Planks</div></div>
       </div>
 
-      <div class="masonry-item" onclick="openLightbox('Custom Interior Door')">
-        <div class="masonry-visual masonry-box" style="height:300px;background:linear-gradient(135deg,#37474F,#6D4C41);">
-          <i class="fa-solid fa-door-open"></i>
-        </div>
-        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Custom Interior Door</div></div>
+      <div class="masonry-item" onclick="openLightbox('Custom Door Frame')">
+        <img class="masonry-visual" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=75" alt="Custom Door Frame" style="height:300px;width:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Custom Door Frame</div></div>
       </div>
 
-      <div class="masonry-item" onclick="openLightbox('Neem Wood Stack')">
-        <div class="masonry-visual masonry-box" style="height:190px;background:linear-gradient(135deg,#33691E,#5D4037);">
-          <i class="fa-solid fa-leaf"></i>
-        </div>
-        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Neem Wood Stack</div></div>
+      <div class="masonry-item" onclick="openLightbox('Neem Wood Stock')">
+        <img class="masonry-visual" src="https://images.unsplash.com/photo-1611048267451-e6ed903d4a38?auto=format&fit=crop&w=600&q=75" alt="Neem Wood Stock" style="height:190px;width:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Neem Wood Stock</div></div>
       </div>
 
-      <div class="masonry-item" onclick="openLightbox('Villa Project Complete')">
-        <div class="masonry-visual masonry-box" style="height:240px;background:linear-gradient(135deg,#5D4037,#BCAAA4);">
-          <i class="fa-solid fa-house-chimney"></i>
-        </div>
-        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Villa Project</div></div>
+      <div class="masonry-item" onclick="openLightbox('Timber Depot View')">
+        <img class="masonry-visual" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=600&q=75" alt="Timber Depot View" style="height:240px;width:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Timber Depot View</div></div>
+      </div>
+
+      <div class="masonry-item" onclick="openLightbox('Premium Window Set')">
+        <img class="masonry-visual" src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=600&q=75" alt="Premium Window Set" style="height:210px;width:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Premium Window Set</div></div>
+      </div>
+
+      <div class="masonry-item" onclick="openLightbox('Villa Entrance Door')">
+        <img class="masonry-visual" src="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?auto=format&fit=crop&w=600&q=75" alt="Villa Entrance Door" style="height:290px;width:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Villa Entrance Door</div></div>
+      </div>
+
+      <div class="masonry-item" onclick="openLightbox('Wood Grain Texture')">
+        <img class="masonry-visual" src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=600&q=75" alt="Wood Grain Texture" style="height:150px;width:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Wood Grain Texture</div></div>
+      </div>
+
+      <div class="masonry-item" onclick="openLightbox('Interior Wooden Door')">
+        <img class="masonry-visual" src="https://images.unsplash.com/photo-1593696140826-c58b021acf8b?auto=format&fit=crop&w=600&q=75" alt="Interior Wooden Door" style="height:310px;width:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Interior Wooden Door</div></div>
+      </div>
+
+      <div class="masonry-item" onclick="openLightbox('Teak Timber Stack')">
+        <img class="masonry-visual" src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=600&q=75" alt="Teak Timber Stack" style="height:195px;width:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Teak Timber Stack</div></div>
+      </div>
+
+      <div class="masonry-item" onclick="openLightbox('Hardwood Floor')">
+        <img class="masonry-visual" src="https://images.unsplash.com/photo-1503174971373-b1f69850bded?auto=format&fit=crop&w=600&q=75" alt="Hardwood Floor" style="height:250px;width:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Hardwood Floor</div></div>
+      </div>
+
+      <div class="masonry-item" onclick="openLightbox('Modern Wood Doors')">
+        <img class="masonry-visual" src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=600&q=75" alt="Modern Wood Doors" style="height:225px;width:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Modern Wood Doors</div></div>
+      </div>
+
+      <div class="masonry-item" onclick="openLightbox('Forest Premium Timber')">
+        <img class="masonry-visual" src="https://images.unsplash.com/photo-1469796466635-455ede028aca?auto=format&fit=crop&w=600&q=75" alt="Forest Premium Timber" style="height:270px;width:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Forest Premium Timber</div></div>
+      </div>
+
+      <div class="masonry-item" onclick="openLightbox('Wooden Craftsmanship')">
+        <img class="masonry-visual" src="https://images.unsplash.com/photo-1530990613588-db41a3f9ab08?auto=format&fit=crop&w=600&q=75" alt="Wooden Craftsmanship" style="height:175px;width:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Wooden Craftsmanship</div></div>
+      </div>
+
+      <div class="masonry-item" onclick="openLightbox('Luxury Home Doors')">
+        <img class="masonry-visual" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=75" alt="Luxury Home Doors" style="height:330px;width:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> Luxury Home Doors</div></div>
+      </div>
+
+      <div class="masonry-item" onclick="openLightbox('WPC Bathroom Door')">
+        <img class="masonry-visual" src="https://images.unsplash.com/photo-1534237710431-e2fc698436d0?auto=format&fit=crop&w=600&q=75" alt="WPC Bathroom Door" style="height:200px;width:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div class="masonry-overlay"><div class="masonry-caption"><i class="fa-solid fa-expand"></i> WPC Bathroom Door</div></div>
       </div>
 
     </div>
@@ -1661,7 +1706,7 @@
         </div>
         <div class="faq-item" onclick="toggleFaq(this)">
           <div class="faq-question">How do I get a quote for my project?<i class="fa-solid fa-plus faq-icon"></i></div>
-          <div class="faq-answer">You can call us on 91306 40765 / 89778 00536, WhatsApp us, visit our depot at 13-103/3, 3A, Opp. Boys Hotel, Parameshwara Theatre Road, Shadnagar, or fill in our contact form. We typically provide quotes within 24 hours.</div>
+          <div class="faq-answer">You can call us on 91306 40765 / 89778 00536, WhatsApp us, visit our depot at Sub Registrar Office Rd, Shadnagar, Telangana 509216, or fill in our contact form. We typically provide quotes within 24 hours.</div>
         </div>
         <div class="faq-item" onclick="toggleFaq(this)">
           <div class="faq-question">Do you do custom sizing and cutting?<i class="fa-solid fa-plus faq-icon"></i></div>
@@ -1771,7 +1816,7 @@
             <div class="contact-info-icon"><i class="fa-solid fa-envelope"></i></div>
             <div>
               <div class="contact-info-label">Email</div>
-              <div class="contact-info-value"><a href="mailto:akram.sorathiya@gmail.com" style="color:var(--text);text-decoration:none;">akram.sorathiya@gmail.com</a></div>
+              <div class="contact-info-value"><a href="mailto:Meemtimber@gmail.com" style="color:var(--text);text-decoration:none;">Meemtimber@gmail.com</a></div>
             </div>
           </div>
 
@@ -1779,7 +1824,7 @@
             <div class="contact-info-icon"><i class="fa-solid fa-location-dot"></i></div>
             <div>
               <div class="contact-info-label">Depot Address</div>
-              <div class="contact-info-value">13-103/3, 3A, Opp. Boys Hotel,<br/>Parameshwara Theatre Road,<br/>Shadnagar, Rangareddy, TS</div>
+              <div class="contact-info-value">Sub Registrar Office Rd,<br/>Shadnagar, Telangana 509216</div>
             </div>
           </div>
 
@@ -1791,14 +1836,18 @@
             </div>
           </div>
 
-          <div class="map-placeholder">
-            <i class="fa-solid fa-map-location-dot"></i>
-            <div style="font-size:0.9rem;color:rgba(255,255,255,0.7);font-weight:500;">Meem Timber Depot</div>
-            <div style="font-size:0.78rem;">13-103/3, 3A, Parameshwara Theatre Rd,<br/>Shadnagar, Rangareddy, Telangana</div>
-            <a href="https://maps.google.com/?q=Shadnagar+Rangareddy+Telangana" target="_blank" class="btn-gold" style="margin-top:12px;font-size:0.78rem;padding:10px 20px;">
-              <i class="fa-solid fa-directions"></i> Get Directions
-            </a>
+          <div style="border-radius:var(--radius-lg);overflow:hidden;margin-top:8px;box-shadow:0 8px 32px rgba(0,0,0,0.15);">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.6!2d78.0288!3d17.0685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2c87a81c4e69d56e!2sMeem+Timber+Depot!5e0!3m2!1sen!2sin!4v1687000000000!5m2!1sen!2sin" 
+              width="100%" height="220" style="border:0;display:block;" 
+              allowfullscreen="" loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Meem Timber Depot Location">
+            </iframe>
           </div>
+          <a href="https://www.google.com/maps/place/Meem+Timber+Depot/data=!4m2!3m1!1s0x0:0x2c87a81c4e69d56e?sa=X&ved=1t:2428&ictx=111" target="_blank" class="btn-gold" style="margin-top:14px;font-size:0.82rem;padding:12px 24px;display:inline-flex;width:100%;justify-content:center;">
+            <i class="fa-solid fa-directions"></i> Get Directions on Google Maps
+          </a>
         </div>
       </div>
     </div>
@@ -1816,7 +1865,7 @@
           <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a href="https://wa.me/919130640765" target="_blank" class="social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="mailto:akram.sorathiya@gmail.com" class="social-btn" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="mailto:Meemtimber@gmail.com" class="social-btn" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
       </div>
       <div class="col-6 col-lg-2">
@@ -1846,8 +1895,8 @@
         <div class="footer-heading">Contact Us</div>
         <div style="color:rgba(255,255,255,0.4);font-size:0.83rem;line-height:2;">
           <div><i class="fa-solid fa-phone" style="color:var(--accent);margin-right:8px;"></i> 91306 40765 / 89778 00536</div>
-          <div><i class="fa-solid fa-envelope" style="color:var(--accent);margin-right:8px;"></i> akram.sorathiya@gmail.com</div>
-          <div><i class="fa-solid fa-location-dot" style="color:var(--accent);margin-right:8px;"></i> Shadnagar, Rangareddy, TS</div>
+          <div><i class="fa-solid fa-envelope" style="color:var(--accent);margin-right:8px;"></i> Meemtimber@gmail.com</div>
+          <div><i class="fa-solid fa-location-dot" style="color:var(--accent);margin-right:8px;"></i> Shadnagar, Telangana 509216</div>
         </div>
         <div style="margin-top:20px;">
           <a href="https://wa.me/919130640765?text=Hello%2C%20I%20need%20a%20timber%20quote." target="_blank" class="btn-gold" style="font-size:0.82rem;padding:11px 20px;">
